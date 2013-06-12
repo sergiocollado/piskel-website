@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Piskel - home</title>
+	<link rel="stylesheet" type="text/css" href="css/piskel-app.css"/>
+</head>
+<body>
+	<div class="navigation">
+		<a class="link anchor-right" href="about.html">about</a>
+		<a class="link anchor-right" target="_blank" href="https://github.com/juliandescottes/piskel">github</a>
+		{% if is_logged_in %}
+			<a class="link link-login link-highlight anchor-right" href="user/{{ username }}"><img class="small-user-avatar"src="https://lh5.googleusercontent.com/-L6XalTDqfIY/AAAAAAAAAAI/AAAAAAAABXk/pFKVMwxKoa4/photo.jpg"/>{{ username }}</a>
+		{% else %}
+			<a class="link link-login link-highlight anchor-right" href="login">login</a>
+        {% endif %}
+	</div>
+	<div class="piskel-carousel">
+		<div class="piskel-preview-container">
+			<h3>Public repository</h3>
+			{% for id in showcase_piskels %}
+				<img class="piskel-preview" src="https://a248.e.akamai.net/camo.github.com/92b4107a4b98534536103b902ac9224f9d9f5c53/687474703a2f2f73637265656e6c657473746f72652e61707073706f742e636f6d2f696d672f36386531363930662d633861332d313165322d613433312d3133613239316538386630392e676966"/>
+			{% endfor %}
+			<a class="more-link" href="#">See more ...</a>
+		</div>
+	</div>
+
+	<hr class="preview-separator"/>
+
+	<div class="piskel-carousel">
+		<div class="piskel-preview-container">
+			<h3>Julian's latest piskels</h3>
+			{% for id in showcase_piskels %}
+				<span class="piskel-preview"><img src="http://screenletstore.appspot.com/img/0fca316b-d3ad-11e2-8bca-0539c2de58c4.gif"/></span>
+			{% endfor %}
+			<a class="more-link" href="#">See more ...</a>
+		</div>
+	</div>
+
+</body>
+</html>
