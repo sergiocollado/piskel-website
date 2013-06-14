@@ -1,0 +1,9 @@
+<div class="navigation">
+	<a class="link anchor-right" href="about.html">about</a>
+	<a class="link anchor-right" target="_blank" href="https://github.com/juliandescottes/piskel">github</a>
+	{% if is_logged_in %}
+		<a class="link link-login link-highlight anchor-right" href="user/{{ username }}"><img class="small-user-avatar"src="https://lh5.googleusercontent.com/-L6XalTDqfIY/AAAAAAAAAAI/AAAAAAAABXk/pFKVMwxKoa4/photo.jpg"/>{{ username }}</a>
+	{% else %}
+		<a class="link link-login link-highlight anchor-right" href="login">login</a>
+      {% endif %}
+</div>

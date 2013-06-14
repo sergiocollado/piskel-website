@@ -20,11 +20,13 @@ import datetime
 import urllib
 import os
 import handlers.root
+import handlers.user
 import handlers.piskel
 
 
 routes = [
   ('/', handlers.root.RootHandler),
+  (r'/user/(\w+)', handlers.user.UserHandler),
   ('/get', handlers.piskel.Get),
   ('/store', handlers.piskel.Store),
   ('/delete', handlers.piskel.Delete),
